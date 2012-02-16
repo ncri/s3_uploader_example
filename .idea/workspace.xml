@@ -43,7 +43,7 @@
       <file leaf-file-name="_uploader.html.haml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/uploads/_uploader.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="57" selection-start="2882" selection-end="2924" vertical-scroll-proportion="0.64319247">
+            <state line="98" column="12" selection-start="3163" selection-end="3163" vertical-scroll-proportion="0.5093897">
               <folding />
             </state>
           </provider>
@@ -828,7 +828,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/uploads/_uploader.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="57" selection-start="2882" selection-end="2924" vertical-scroll-proportion="0.64319247">
+        <state line="98" column="12" selection-start="3163" selection-end="3163" vertical-scroll-proportion="0.5093897">
           <folding />
         </state>
       </provider>

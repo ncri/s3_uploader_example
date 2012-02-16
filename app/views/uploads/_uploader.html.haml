@@ -84,16 +84,18 @@
             //  out += p + ': ' + data.files[0][p] + '\n';
             //}
             //alert(out);
+
+            // Can only track progress if size property is present on files.
             if( data.files[0].hasOwnProperty('size') ){
               $.each(data.files, function(index, file) {
                 var uploadPercent = "<br/><progress value='0' max='100' class='upload_progress_bar'>0</progress> <span class='upload_percentage'>0</span>" + '%';
                 $('#uploading_files').append("<p class='uploading_file'>" + file.name + uploadPercent + "</p>");
               });
-              data.submit();
             } else
               $.each(data.files, function(index, file) {
-                $('#uploading_files').append("<p class='uploading_file'>" + file.name + "<br/><img src='../img/uploading.gif'/></p>");
+                $('#uploading_files').append("<p class='uploading_file'>" + file.name + "<br/><img src='img/uploading.gif'/></p>");
               });
+            data.submit();
           },
           progress: function (e, data) {
             if( data.files[0].hasOwnProperty('size') ){
