@@ -40,10 +40,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_uploader.html.haml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_uploader.html.haml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/uploads/_uploader.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="21" selection-start="719" selection-end="719" vertical-scroll-proportion="0.0">
+            <state line="83" column="44" selection-start="2353" selection-end="2353" vertical-scroll-proportion="0.49061033">
               <folding />
             </state>
           </provider>
@@ -94,10 +94,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="16" selection-start="270" selection-end="270" vertical-scroll-proportion="0.6924829">
+            <state line="17" column="16" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -134,8 +134,8 @@
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/uploads.css.scss" />
         <option value="$PROJECT_DIR$/app/views/uploads/index.html.haml" />
-        <option value="$PROJECT_DIR$/app/views/uploads/_uploader.html.haml" />
         <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/app/views/uploads/_uploader.html.haml" />
       </list>
     </option>
   </component>
@@ -819,16 +819,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/uploads/_uploader.html.haml">
+    <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="21" selection-start="719" selection-end="719" vertical-scroll-proportion="0.0">
+        <state line="17" column="16" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
+    <entry file="file://$PROJECT_DIR$/app/views/uploads/_uploader.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="16" selection-start="270" selection-end="270" vertical-scroll-proportion="0.6924829">
+        <state line="83" column="44" selection-start="2353" selection-end="2353" vertical-scroll-proportion="0.49061033">
           <folding />
         </state>
       </provider>

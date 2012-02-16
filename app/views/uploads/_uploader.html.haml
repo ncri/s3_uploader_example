@@ -79,6 +79,11 @@
             console.log(data);
           },
           add: function (e, data) {
+            var out = '';
+            for (var p in data.files[0]) {
+              out += p + ': ' + data.files[0][p] + '\n';
+            }
+            alert(out);
             $.each(data.files, function(index, file) {
               var uploadPercent = "<br/><progress value='0' max='100' class='upload_progress_bar'>0</progress> <span class='upload_percentage'>0</span>" + '%';
               $('#uploading_files').append("<p class='uploading_file'>" + file.name + uploadPercent + "</p>");
