@@ -43,7 +43,7 @@
       <file leaf-file-name="_uploader.html.haml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/uploads/_uploader.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="44" selection-start="2353" selection-end="2353" vertical-scroll-proportion="0.49061033">
+            <state line="112" column="30" selection-start="3752" selection-end="3752" vertical-scroll-proportion="0.59859157">
               <folding />
             </state>
           </provider>
@@ -97,7 +97,7 @@
       <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="16" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0">
+            <state line="8" column="16" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -784,13 +784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/uploads_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="2" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/load_config.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="9" selection-start="78" selection-end="78" vertical-scroll-proportion="0.0">
@@ -812,6 +805,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="16" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/uploads_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="2" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/uploads/index.html.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="28" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0">
@@ -819,16 +826,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="16" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/uploads/_uploader.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="44" selection-start="2353" selection-end="2353" vertical-scroll-proportion="0.49061033">
+        <state line="112" column="30" selection-start="3752" selection-end="3752" vertical-scroll-proportion="0.59859157">
           <folding />
         </state>
       </provider>

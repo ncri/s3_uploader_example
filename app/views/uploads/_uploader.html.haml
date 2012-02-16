@@ -79,23 +79,28 @@
             console.log(data);
           },
           add: function (e, data) {
-            var out = '';
-            for (var p in data.files[0]) {
-              out += p + ': ' + data.files[0][p] + '\n';
-            }
-            alert(out);
-            $.each(data.files, function(index, file) {
-              var uploadPercent = "<br/><progress value='0' max='100' class='upload_progress_bar'>0</progress> <span class='upload_percentage'>0</span>" + '%';
-              $('#uploading_files').append("<p class='uploading_file'>" + file.name + uploadPercent + "</p>");
-            });
-            data.submit();
+            //var out = '';
+            //for (var p in data.files[0]) {
+            //  out += p + ': ' + data.files[0][p] + '\n';
+            //}
+            //alert(out);
+            if( data.files[0].hasOwnProperty('size') ){
+              $.each(data.files, function(index, file) {
+                var uploadPercent = "<br/><progress value='0' max='100' class='upload_progress_bar'>0</progress> <span class='upload_percentage'>0</span>" + '%';
+                $('#uploading_files').append("<p class='uploading_file'>" + file.name + uploadPercent + "</p>");
+              });
+              data.submit();
+            } else
+              $('#uploading_files').append("<p class='uploading_file'>" + file.name + "<br/><img src='../img/uploading.gif'/></p>");
+
           },
           progress: function (e, data) {
-            var fileIndex = data.originalFiles.indexOf(data.files[0])
-            var progress = parseInt(data.loaded / data.total * 100, 10);
-            $('.upload_percentage').eq(fileIndex).html(progress);
-            $('.upload_progress_bar').eq(fileIndex).val(progress);
-
+            if( data.files[0].hasOwnProperty('size') ){
+              var fileIndex = data.originalFiles.indexOf(data.files[0])
+              var progress = parseInt(data.loaded / data.total * 100, 10);
+              $('.upload_percentage').eq(fileIndex).html(progress);
+              $('.upload_progress_bar').eq(fileIndex).val(progress);
+            }
           },
           //start: function (e) {
           //  console.log('Upload started');
