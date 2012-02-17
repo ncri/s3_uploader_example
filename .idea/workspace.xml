@@ -34,7 +34,7 @@
       <file leaf-file-name="uploads_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/uploads_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="55" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0">
+            <state line="17" column="4" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -43,7 +43,7 @@
       <file leaf-file-name="_uploader.html.haml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/uploads/_uploader.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="116" column="14" selection-start="3930" selection-end="3930" vertical-scroll-proportion="0.5225">
+            <state line="92" column="14" selection-start="2434" selection-end="2434" vertical-scroll-proportion="-0.10721248">
               <folding />
             </state>
           </provider>
@@ -88,7 +88,7 @@
       <file leaf-file-name="application.html.haml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="4" selection-start="179" selection-end="179" vertical-scroll-proportion="-6.84">
+            <state line="9" column="4" selection-start="179" selection-end="179" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -126,7 +126,6 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/uploads_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/uploads/_uploads.html.haml" />
         <option value="$PROJECT_DIR$/app/helpers/uploads_helper.rb" />
         <option value="$PROJECT_DIR$/config/amazon_s3.yml" />
@@ -135,6 +134,7 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/uploads.css.scss" />
         <option value="$PROJECT_DIR$/app/views/uploads/index.html.haml" />
         <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/app/controllers/uploads_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/uploads/_uploader.html.haml" />
       </list>
     </option>
@@ -149,7 +149,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1280" />
-    <option name="height" value="879" />
+    <option name="height" value="883" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -177,6 +177,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="RailsProjectView">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html5_s3_uploader" />
+              <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.projectView.v2.nodes.RailsProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -343,18 +353,19 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="ruby.project.structure" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="ruby.project.structure" />
+    <property name="FullScreen" value="false" />
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
     <property name="Ruby.ViewRefParam.DefaultExtension" value="html.haml" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -385,6 +396,12 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
       <RunnerSettings RunnerId="RubyRunner" />
       <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Default" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console" temporary="true">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="USER_CFG_CLASS" />
+      <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
     <configuration default="true" type="RakeRunConfigurationType" factoryName="Rake">
@@ -514,7 +531,7 @@
     </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
       <JSRemoteDebuggerConfigurationSettings>
-        <option name="engineId" />
+        <option name="engineId" value="embedded" />
         <option name="fileUrl" />
       </JSRemoteDebuggerConfigurationSettings>
       <method>
@@ -523,9 +540,17 @@
     </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
       <JSDebuggerConfigurationSettings>
-        <option name="engineId" />
+        <option name="engineId" value="embedded" />
         <option name="fileUrl" />
       </JSDebuggerConfigurationSettings>
+      <method>
+        <option name="RakeTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="USER_CFG_CLASS" />
+      <option name="CONTEXT_PROVIDER" />
       <method>
         <option name="RakeTask" enabled="false" />
       </method>
@@ -624,12 +649,13 @@
       <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
-    <list size="5">
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Rake.test" />
       <item index="1" class="java.lang.String" itemvalue="Rake.spec" />
       <item index="2" class="java.lang.String" itemvalue="Rails.Production: html5_s3_uploader" />
       <item index="3" class="java.lang.String" itemvalue="Rails.Development: html5_s3_uploader" />
       <item index="4" class="java.lang.String" itemvalue="Rake.db:migrate" />
+      <item index="5" class="java.lang.String" itemvalue="Query Language Console.Default" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -653,33 +679,34 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+      <changelist id="db416fa7-dd3b-47bf-bf33-e75098fc6ccb" name="Default" comment="" />
       <created>1329417464908</created>
       <updated>1329417464908</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="879" extended-state="0" />
+    <frame x="0" y="22" width="1280" height="883" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23457792" sideWeight="0.67105263" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15584415" sideWeight="0.7526178" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2473822" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -737,98 +764,74 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/config/initializers/wrap_parameters.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/backtrace_silencers.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/application.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="17" selection-start="75" selection-end="75" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="3" column="17" selection-start="75" selection-end="75" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20120216184202_create_uploads.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="18" selection-start="208" selection-end="208" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="11" column="18" selection-start="208" selection-end="208" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/uploads_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="55" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="17" column="4" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/uploads_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="2" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/amazon_s3.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="10" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="7" column="10" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/load_config.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="9" selection-start="78" selection-end="78" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="3" column="9" selection-start="78" selection-end="78" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/uploads/index.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="28" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="4" selection-start="179" selection-end="179" vertical-scroll-proportion="-6.84">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/uploads.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="1" selection-start="529" selection-end="529" vertical-scroll-proportion="0.0">
+        <state line="9" column="4" selection-start="179" selection-end="179" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="16" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="8" column="16" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/uploads_helper.rb">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/uploads.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="2" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/uploads/index.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="28" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="28" column="1" selection-start="529" selection-end="529" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/uploads/_uploader.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="14" selection-start="3930" selection-end="3930" vertical-scroll-proportion="0.5225">
+        <state line="92" column="14" selection-start="2434" selection-end="2434" vertical-scroll-proportion="-0.10721248">
           <folding />
         </state>
       </provider>

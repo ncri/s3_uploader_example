@@ -12,6 +12,13 @@ class UploadsController < ApplicationController
   end
 
 
+  def create
+    headers['Access-Control-Allow-Origin'] = 'http://do2-media.s3.amazonaws.com'
+    headers['Access-Control-Allow-Methods'] = '*'
+
+  end
+
+
   private
 
   def ensure_s3_connection!

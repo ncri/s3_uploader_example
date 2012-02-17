@@ -33,7 +33,7 @@
         top:0;
         left:0;
         width: 500px;
-        padding-top:120px;
+        padding-top:100px;
         text-align: center;
         font-size: 2em;
         font-weight: bold;
@@ -46,12 +46,27 @@
         z-index: 1;
       }
 
+      #drag_remark{
+        font-size: 0.5em;
+      }
+
+      .remove_link{
+        color: red;
+        text-decoration: none;
+      }
+
 
   %body
 
     - folder = 'uploaded_files'
 
-    #drag_text Drag files here
+    #drag_text
+      drop files here
+      %br
+      %span#drag_remark
+        file drag'n'drop works in Google Chrome, Firefox 4+ and Safari 5+
+        %br
+        (buggy in Windows Safari)
 
     %form#file_upload(action="" method="post" enctype="multipart/form-data")
       %input{:type => :hidden, :name => :key, value: "#{s3_key(folder)}"}
@@ -75,8 +90,7 @@
             return form.serializeArray();
           },
           fail: function(e, data) {
-            console.log('fail');
-            console.log(data);
+          //
           },
           add: function (e, data) {
             //var out = '';
@@ -86,45 +100,34 @@
             //alert(out);
 
             // Can only track progress if size property is present on files.
-            if( data.files[0].hasOwnProperty('size') ){
-              $.each(data.files, function(index, file) {
-                var uploadPercent = "<br/><progress value='0' max='100' class='upload_progress_bar'>0</progress> <span class='upload_percentage'>0</span>" + '%';
-                $('#uploading_files').append("<p class='uploading_file'>" + file.name + uploadPercent + "</p>");
-              });
+            file = data.files[0];
+            if( file.hasOwnProperty('size') ){
+              var uploadPercent = "<br/><progress value='0' max='100' class='upload_progress_bar'>0</progress> <span class='upload_percentage'>0</span>" + '%';
+              $('#uploading_files').append("<p class='uploading_file'>" + file.name + uploadPercent + " <a href='#' class='remove_link'>X<a/></p>");
             } else
-              $.each(data.files, function(index, file) {
-                $('#uploading_files').append("<p class='uploading_file'>" + file.name + "<br/><img src='img/uploading.gif'/></p>");
-              });
-            data.submit();
+              $('#uploading_files').append("<p class='uploading_file'>" + file.name + "<br/><img src='img/uploading.gif'/></p>");
+
+            data.context = $('.uploading_file').last();
+            data.jqXHR = data.submit();
+
+            $('.uploading_file .remove_link').last().click(function (e) {
+              data.jqXHR.abort();
+              data.context.hide()
+            });
           },
           progress: function (e, data) {
             if( data.files[0].hasOwnProperty('size') ){
-              var fileIndex = $(data.originalFiles).index(data.files[0]);
               var progress = parseInt(data.loaded / data.total * 100, 10);
-              $('.upload_percentage').eq(fileIndex).html(progress);
-              $('.upload_progress_bar').eq(fileIndex).val(progress);
+              data.context.find('.upload_percentage').html(progress);
+              data.context.find('.upload_progress_bar').val(progress);
             }
           },
-          //start: function (e) {
-          //  console.log('Upload started');
-          //},
           done: function (e, data) {
-            var fileIndex = $(data.originalFiles).index(data.files[0]);
-            $('.uploading_file').eq(fileIndex).hide();
+            data.context.hide();
           },
           stop: function(e){
             $('.uploading_file').remove()
             //$.ajax('http://daveoshana.com', {type: 'POST'})
-          }//,
-          //add: function (e, data) {
-          //    $.each(data.files, function (index, file) {
-          //      alert('Added file: ' + file.name);
-          //    });
-          //    data.url = '/path/to/upload/handler.json';
-          //    var jqXHR = data.submit()
-          //        .success(function (result, textStatus, jqXHR) {/* ... */})
-          //        .error(function (jqXHR, textStatus, errorThrown) {/* ... */})
-          //        .complete(function (result, textStatus, jqXHR) {/* ... */});
-          //}
+          }
         });
       });
