@@ -93,15 +93,9 @@
           //
           },
           add: function (e, data) {
-            //var out = '';
-            //for (var p in data.files[0]) {
-            //  out += p + ': ' + data.files[0][p] + '\n';
-            //}
-            //alert(out);
-
             // Can only track progress if size property is present on files.
             file = data.files[0];
-            if( file.hasOwnProperty('size') ){
+            if( 'size' in file ){
               var uploadPercent = "<br/><progress value='0' max='100' class='upload_progress_bar'>0</progress> <span class='upload_percentage'>0</span>" + '%';
               $('#uploading_files').append("<p class='uploading_file'>" + file.name + uploadPercent + " <a href='#' class='remove_link'>X<a/></p>");
             } else
@@ -116,7 +110,7 @@
             });
           },
           progress: function (e, data) {
-            if( data.files[0].hasOwnProperty('size') ){
+            if( 'size' in data.files[0] ){
               var progress = parseInt(data.loaded / data.total * 100, 10);
               data.context.find('.upload_percentage').html(progress);
               data.context.find('.upload_progress_bar').val(progress);
