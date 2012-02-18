@@ -83,6 +83,21 @@
 
     :javascript
       $(function() {
+
+        // Opera doesn't handle multiple files properly so use single file selection there
+        if (navigator.appName == 'Opera') {
+          $('#file_upload').find('input:file').each(function () {
+            $(this).removeAttr('multiple')
+                // Fix for Opera, which ignores just removing the multiple attribute:
+                .replaceWith($(this).clone(true));
+          });
+        }
+
+        function xhrUploadProgressSupported(){
+          var xhr = new XMLHttpRequest();
+          return !! (xhr && ('upload' in xhr) && ('onprogress' in xhr.upload));
+        }
+
         $('#file_upload').fileupload({
           dropZone: $(document.body),
           url: "#{s3_bucket_url}",
@@ -94,12 +109,15 @@
           },
           add: function (e, data) {
             // Can only track progress if size property is present on files.
-            file = data.files[0];
-            if( 'size' in file ){
-              var uploadPercent = "<br/><progress value='0' max='100' class='upload_progress_bar'>0</progress> <span class='upload_percentage'>0</span>" + '%';
-              $('#uploading_files').append("<p class='uploading_file'>" + file.name + uploadPercent + " <a href='#' class='remove_link'>X<a/></p>");
-            } else
-              $('#uploading_files').append("<p class='uploading_file'>" + file.name + "<br/><img src='img/uploading.gif'/></p>");
+
+            progressSupported = xhrUploadProgressSupported();
+            $.each(data.files, function (index, file) {
+              if( progressSupported ){
+                var uploadPercent = "<br/><progress value='0' max='100' class='upload_progress_bar'>0</progress> <span class='upload_percentage'>0</span>" + '%';
+                $('#uploading_files').append("<p class='uploading_file'>" + file.name + uploadPercent + " <a href='#' class='remove_link'>X<a/></p>");
+              } else
+                $('#uploading_files').append("<p class='uploading_file'>" + file.name + "<br/><img src='img/uploading.gif'/></p>");
+            });
 
             data.context = $('.uploading_file').last();
             data.jqXHR = data.submit();
@@ -110,7 +128,7 @@
             });
           },
           progress: function (e, data) {
-            if( 'size' in data.files[0] ){
+            if( xhrUploadProgressSupported() ){
               var progress = parseInt(data.loaded / data.total * 100, 10);
               data.context.find('.upload_percentage').html(progress);
               data.context.find('.upload_progress_bar').val(progress);
