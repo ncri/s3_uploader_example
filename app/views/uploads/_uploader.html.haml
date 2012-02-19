@@ -2,7 +2,6 @@
 %html
   %head
     %meta{:charset => "utf-8"}
-    %title jQuery File Upload Example
 
     %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"}
     %script{:src => "//ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/jquery-ui.min.js"}
@@ -58,8 +57,6 @@
 
   %body
 
-    - folder = 'uploaded_files'
-
     #drag_text
       drop files here
       %br
@@ -69,12 +66,12 @@
         (buggy in Windows Safari)
 
     %form#file_upload(action="" method="post" enctype="multipart/form-data")
-      %input{:type => :hidden, :name => :key, value: "#{s3_key(folder)}"}
-      %input{:type => :hidden, :name => "AWSAccessKeyId", :value => "#{S3_CONFIG['access_key_id']}"}
-      %input{:type => :hidden, :name => :acl, :value => 'public-read'}
+      %input{:type => :hidden, :name => :key}
+      %input{:type => :hidden, :name => "AWSAccessKeyId"}
+      %input{:type => :hidden, :name => :acl, value: 'public-read'}
       %input{:type => :hidden, :name => :success_action_status, :value => "201"}
-      %input{:type => :hidden, :name => :policy, value: "#{s3_policy(path: folder)}" }
-      %input{:type => :hidden, :name => :signature, value: "#{s3_signature(path: folder)}"}
+      %input{:type => :hidden, :name => :policy}
+      %input{:type => :hidden, :name => :signature}
 
       %input{:type => :file, :name => 'file', multiple: ''}
 
@@ -83,7 +80,12 @@
 
     :javascript
       $(function() {
+      //alert(location.href.replace(/%2F/g, '/').replace(/%3D/g, '='))
+        var params = location.href.replace(/%3D/g, '=').split('?')[1].split('&');
 
+        for (x in params){
+          $('#file_upload input[name=' + params[x].split('=')[0] + ']').val(params[x].substring(params[x].search('=')+1));
+         }
         // Opera doesn't handle multiple files properly so use single file selection there
         if (navigator.appName == 'Opera') {
           $('#file_upload').find('input:file').each(function () {
@@ -136,10 +138,18 @@
           },
           done: function (e, data) {
             data.context.hide();
+            var file = data.files[0];
+            //var params = { file_name: file.name }
+            //if ('size' in file)
+            //  params.file_size = file.size;
+            //if ('type' in file)
+            //  params.file_type = file.type;
+            //$.ajax('#{after_upload_url}',
+            //  { type: 'POST',
+            //    data: "upload[file_name]=" + encodeURIComponent(file.name)  } )
           },
           stop: function(e){
             $('.uploading_file').remove()
-            //$.ajax('http://daveoshana.com', {type: 'POST'})
           }
         });
       });
