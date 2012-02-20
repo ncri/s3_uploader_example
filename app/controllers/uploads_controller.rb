@@ -15,12 +15,7 @@ class UploadsController < ApplicationController
 
   def create
     @upload = Upload.new(params[:upload] || params.delete_if{ |p| !Upload.attribute_names.include?(p) })
-    if @upload.save
-      render nothing: true
-      #render js: "$('#uploading_files').html('Test')", status: 201
-    end
-    headers['Access-Control-Allow-Origin'] = 'http://do2-media.s3.amazonaws.com'
-    headers['Access-Control-Allow-Methods'] = '*'
+    render nothing: true if @upload.save
   end
 
 

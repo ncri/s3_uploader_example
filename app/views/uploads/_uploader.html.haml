@@ -8,61 +8,14 @@
 
     / The Iframe Transport is required for browsers without support for XHR file uploads
     %script{:src => "js/jquery.iframe-transport.js"}
+
     / The basic File Upload plugin
     %script{:src => "js/jquery.fileupload.js"}
 
-    :css
-
-      body{
-        font-family: verdana, arial, helvetica, sans-serif;
-        font-size:12px;
-        color:#666666;
-        margin:0;
-        padding:0;
-      }
-
-      progress{
-        width: 200px;
-      }
-
-      #drag_text{
-        position: absolute;
-        z-index: 0;
-        top:0;
-        left:0;
-
-        padding-top:100px;
-        text-align: center;
-        font-size: 2em;
-        font-weight: bold;
-        color: #ddd;
-        font-style:italic;
-      }
-
-      #uploading_files, #file_upload{
-        position: relative;
-        z-index: 1;
-      }
-
-      #drag_remark{
-        font-size: 0.5em;
-      }
-
-      .remove_link{
-        color: red;
-        text-decoration: none;
-      }
+    %script{:src => "js/s3_uploader.js"}
 
 
   %body
-
-    #drag_text
-      drop files here
-      %br
-      %span#drag_remark
-        file drag'n'drop works in Google Chrome, Firefox 4+ and Safari 5+
-        %br
-        (buggy in Windows Safari)
 
     %form#file_upload(action="" method="post" enctype="multipart/form-data")
       %input{:type => :hidden, :name => :key}
@@ -74,91 +27,3 @@
 
       %input{:type => :file, :name => 'file', multiple: ''}
 
-
-    :javascript
-      $(function() {
-
-        var params = unescape(location.href).split('?')[1].split('&');
-
-        var createResourceUrl;
-
-        var jqXHR = new Array();
-
-        var host = 'http://html5-s3-uploader.herokuapp.com'; //'http://localhost:3000'
-
-        //// Can only track progress if size property is present on files.
-        //var progressSupported = xhrUploadProgressSupported();
-
-        for (x in params){
-          key = params[x].split('=')[0]
-          val = params[x].substring(params[x].search('=')+1);
-          $('#file_upload input[name=' + key.replace(/^_/,'') + ']').val(val);
-         }
-
-        // Opera doesn't handle multiple files properly so use single file selection there
-        if (navigator.appName == 'Opera') {
-          $('#file_upload').find('input:file').each(function () {
-            $(this).removeAttr('multiple')
-              // Fix for Opera, which ignores just removing the multiple attribute:
-              .replaceWith($(this).clone(true));
-          });
-        }
-
-        function randomString(length) {
-          var chars = 'abcdefghiklmnopqrstuvwxyz';
-          var sRnd = '';
-          for (var i=0; i<length; i++){
-              var randomPoz = Math.floor(Math.random() * chars.length);
-              sRnd += chars.substring(randomPoz,randomPoz+1);
-          }
-          return sRnd;
-        }
-
-        window.addEventListener("message", function (e) {
-          if (e.origin !== host)
-            return;
-          jqXHR[e.data.uuid].abort();
-        });
-
-        $('#file_upload').fileupload({
-          dropZone: $(document.body),
-          url: "#{s3_bucket_url}",
-          formData: function (form) {
-            data = form.serializeArray();
-            if ('type' in this.files[0])
-              data.push({ name: 'Content-Type', value: this.files[0].type })
-            data[0].value = data[0].value.replace(':uuid', this.context)
-            return data;
-          },
-          fail: function(e, data) {
-          //
-          },
-          add: function (e, data) {
-            postData = { eventType: 'add upload' }
-            postData.uuidInKey = $('#file_upload input[name=key]').val().search(':uuid') != -1;
-            postData.file_name = data.files[0].name
-            postData.uuid = randomString(20);
-
-            window.parent.postMessage(postData, host);
-
-            data.context = postData.uuid;
-            jqXHR[postData.uuid] = data.submit();
-
-          },
-          progress: function (e, data) {
-            window.parent.postMessage({ eventType: 'upload progress',
-                                        uuid: data.context,
-                                        progress: parseInt(data.loaded / data.total * 100, 10) },
-                                        host);
-          },
-          done: function (e, data) {
-            var file = data.files[0];
-            var postData = { eventType: 'upload done', uuid: data.context };
-            postData.file_name = file.name;
-            postData.s3_key = $('#file_upload input[name=key]').val().replace('/${filename}', '').replace(':uuid', data.context);
-            if( 'size' in file ) postData.file_size = file.size;
-            if( 'type' in file ) postData.file_type = file.type;
-            window.parent.postMessage(postData, host);
-          },
-        });
-      });

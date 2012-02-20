@@ -9,6 +9,7 @@ module UploadsHelper
 
     upload_params = { key: s3_key(options[:uploaded_files_path]),
                       AWSAccessKeyId: S3_CONFIG['access_key_id'],
+                      bucket: s3_bucket_url,
                       _policy: s3_policy(path: options[:uploaded_files_path]),
                       _signature: s3_signature(path: options[:uploaded_files_path]) }.to_query
 
