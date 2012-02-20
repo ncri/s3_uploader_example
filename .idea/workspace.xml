@@ -67,10 +67,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_uploader.html.haml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_uploader.html.haml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/uploads/_uploader.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="25" selection-start="445" selection-end="445" vertical-scroll-proportion="0.39310345">
+            <state line="86" column="86" selection-start="2117" selection-end="2117" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -94,10 +94,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="uploads.js.coffee" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="uploads.js.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/uploads.js.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="23" selection-start="380" selection-end="380" vertical-scroll-proportion="-10.230769">
+            <state line="14" column="23" selection-start="380" selection-end="380" vertical-scroll-proportion="-0.102888085">
               <folding />
             </state>
           </provider>
@@ -704,7 +704,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="881" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -869,16 +869,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/uploads.js.coffee">
+    <entry file="file://$PROJECT_DIR$/app/views/uploads/_uploader.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="23" selection-start="380" selection-end="380" vertical-scroll-proportion="-10.230769">
+        <state line="86" column="86" selection-start="2117" selection-end="2117" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/uploads/_uploader.html.haml">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/uploads.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="25" selection-start="445" selection-end="445" vertical-scroll-proportion="0.39310345">
+        <state line="14" column="23" selection-start="380" selection-end="380" vertical-scroll-proportion="-0.102888085">
           <folding />
         </state>
       </provider>
