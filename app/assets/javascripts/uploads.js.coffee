@@ -24,10 +24,10 @@ jQuery ->
     if event.origin != uploaderHost
       return
 
-    eventType = event.data.eventType;
-    delete event.data.eventType;
+    data = JSON.parse(event.data)
 
-    data = event.data
+    eventType = data.eventType
+    delete data.eventType
 
     switch eventType
 

@@ -38,7 +38,8 @@ jQuery(function() {
     event.preventDefault()
     if (e.originalEvent.origin !== host)
       return;
-    jqXHR[e.originalEvent.data.uuid].abort();
+    data = JSON.parse(e.originalEvent.data)
+    jqXHR[data.uuid].abort();
   });
 
   $('#file_upload').fileupload({
@@ -59,17 +60,17 @@ jQuery(function() {
       postData.file_name = data.files[0].name
       postData.uuid = randomString(20);
 
-      window.parent.postMessage(postData, host);
+      window.parent.postMessage(JSON.stringify(postData), host);
 
       data.context = postData.uuid;
       jqXHR[postData.uuid] = data.submit();
     },
 
     progress: function (e, data) {
-      window.parent.postMessage({ eventType: 'upload progress',
-                                  uuid: data.context,
-                                  progress: parseInt(data.loaded / data.total * 100, 10) },
-                                  host);
+      window.parent.postMessage( JSON.stringify({ eventType: 'upload progress',
+                                 uuid: data.context,
+                                 progress: parseInt(data.loaded / data.total * 100, 10) }),
+                                 host);
     },
 
     done: function (e, data) {
@@ -79,7 +80,7 @@ jQuery(function() {
       postData.s3_key = $('#file_upload input[name=key]').val().replace('/${filename}', '').replace(':uuid', data.context);
       if( 'size' in file ) postData.file_size = file.size;
       if( 'type' in file ) postData.file_type = file.type;
-      window.parent.postMessage(postData, host);
+      window.parent.postMessage(JSON.stringify(postData), host);
     },
   });
 });
