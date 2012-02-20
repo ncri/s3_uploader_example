@@ -46,7 +46,7 @@ jQuery ->
           uploadPercent = "<br/><progress value='0' max='100' class='upload_progress_bar'>0</progress> <span class='upload_percentage'>0</span> %";
           $('#uploading_files').append("<p class='uploading_file'>#{data.file_name + uploadPercent} <a href='#' class='remove_link'>X<a/></p>");
         else
-          $('#uploading_files').append("<p class='uploading_file'>#{data.file_name}<br/><img src='img/uploading.gif'/></p>");
+          $('#uploading_files').append("<p class='uploading_file'>#{data.file_name}<br/><img src='<%= asset_path('uploading.gif') %>'/></p>");
 
         $('.uploading_file').last().attr 'data-uuid', data.uuid
 
