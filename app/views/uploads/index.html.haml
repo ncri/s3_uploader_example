@@ -1,7 +1,5 @@
 %h1 jQuery S3 File Uploader Demo
 #uploader
-  -##{SecureRandom.hex(10)}
-  %iframe{ src: "http://do2-media.s3.amazonaws.com/uploader/uploader.html?#{@frame_params}",
-           frameborder: 0,
-           height: 300,
-           width: 500 }
+  = s3_uploader create_resource_url: uploads_url
+
+  #uploading_files

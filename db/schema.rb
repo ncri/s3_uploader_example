@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20120216184202) do
     t.string   "file_name"
     t.string   "file_type"
     t.string   "file_size"
+    t.string   "s3_key"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

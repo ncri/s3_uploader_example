@@ -27,3 +27,36 @@ h1{
   padding: 10px;
   border-radius: 7px;
 }
+
+
+progress{
+  width: 200px;
+}
+
+#drag_text{
+  position: absolute;
+  z-index: 0;
+  top:0;
+  left:0;
+  width: 500px;
+  padding-top:100px;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  color: #ddd;
+  font-style:italic;
+}
+
+#uploading_files, #file_upload{
+  position: relative;
+  z-index: 1;
+}
+
+#drag_remark{
+  font-size: 0.5em;
+}
+
+.remove_link{
+  color: red;
+  text-decoration: none;
+}

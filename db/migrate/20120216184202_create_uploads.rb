@@ -4,6 +4,7 @@ class CreateUploads < ActiveRecord::Migration
       t.string :file_name
       t.string :file_type
       t.string :file_size
+      t.string :s3_key
 
       t.timestamps
     end
