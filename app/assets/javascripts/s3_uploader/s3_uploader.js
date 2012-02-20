@@ -1,6 +1,6 @@
 jQuery(function() {
 
-  var host = 'http://localhost:3000';
+  var host = 'http://html5-s3-uploader.herokuapp.com'; //http://localhost:3000';
 
   var params = decodeURIComponent(location.href).split('?')[1].split('&');
   var s3BucketUrl;
@@ -34,10 +34,11 @@ jQuery(function() {
     return sRnd;
   }
 
-  window.addEventListener("message", function (e) {
-    if (e.origin !== host)
+  $(window).bind("message", function (e) {
+    event.preventDefault()
+    if (e.originalEvent.origin !== host)
       return;
-    jqXHR[e.data.uuid].abort();
+    jqXHR[e.originalEvent.data.uuid].abort();
   });
 
   $('#file_upload').fileupload({

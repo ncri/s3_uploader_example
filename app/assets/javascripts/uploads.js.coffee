@@ -17,7 +17,10 @@ jQuery ->
     $('#uploader iframe')[0].contentWindow.postMessage({ eventType: 'abort upload', uuid: uuid }, uploaderHost);
 
 
-  window.addEventListener "message", (event) ->
+  $(window).bind "message", (event) ->
+
+    event = event.originalEvent
+
     if event.origin != uploaderHost
       return
 
