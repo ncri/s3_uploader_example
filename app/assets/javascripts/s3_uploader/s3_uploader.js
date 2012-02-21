@@ -7,8 +7,8 @@ jQuery(function() {
   var jqXHR = new Array();
 
   for (x in params){
-    key = params[x].split('=')[0]
-    val = params[x].substring(params[x].search('=')+1);
+    var key = params[x].split('=')[0];
+    var val = params[x].substring(params[x].search('=')+1);
     if( key == 'bucket' )
       s3BucketUrl = val;
     else
@@ -35,10 +35,10 @@ jQuery(function() {
   }
 
   $(window).bind("message", function (e) {
-    event.preventDefault()
+    event.preventDefault();
     if (e.originalEvent.origin !== host)
       return;
-    data = JSON.parse(e.originalEvent.data)
+    var data = JSON.parse(e.originalEvent.data)
     jqXHR[data.uuid].abort();
   });
 
@@ -47,17 +47,19 @@ jQuery(function() {
     url: s3BucketUrl,
 
     formData: function (form) {
-      data = form.serializeArray();
-      if ('type' in this.files[0])
-        data.push({ name: 'Content-Type', value: this.files[0].type })
-      data[0].value = data[0].value.replace(':uuid', this.context)
+      var data = form.serializeArray();
+      var fileType = '';
+      if ('type' in this.files[0] )
+        fileType = this.files[0].type;
+      data.push({ name: 'Content-Type', value: fileType })
+      data[0].value = data[0].value.replace(':uuid', this.context);
       return data;
     },
 
     add: function (e, data) {
-      postData = { eventType: 'add upload' }
+      var postData = { eventType: 'add upload' }
       postData.uuidInKey = $('#file_upload input[name=key]').val().search(':uuid') != -1;
-      postData.file_name = data.files[0].name
+      postData.file_name = data.files[0].name;
       postData.uuid = randomString(20);
 
       window.parent.postMessage(JSON.stringify(postData), host);
@@ -81,6 +83,6 @@ jQuery(function() {
       if( 'size' in file ) postData.file_size = file.size;
       if( 'type' in file ) postData.file_type = file.type;
       window.parent.postMessage(JSON.stringify(postData), host);
-    },
+    }
   });
 });
