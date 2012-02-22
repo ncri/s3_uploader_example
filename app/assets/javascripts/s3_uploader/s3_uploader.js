@@ -34,7 +34,7 @@ jQuery(function() {
     return sRnd;
   }
 
-  $(window).bind("message", function (e) {
+  $(window).on("message", function (e) {
     event.preventDefault();
     if (e.originalEvent.origin !== host)
       return;

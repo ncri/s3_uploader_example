@@ -8,13 +8,13 @@ module UploadsHelper
     options[:resource_name] ||= controller_name.singularize
 
     upload_params = { key: s3_key(options[:uploaded_files_path]),
-                      AWSAccessKeyId: S3_CONFIG['access_key_id'],
+                      AWSAccessKeyId: ENV['S3_UPLOADER_ACCESS_KEY'],
                       bucket: s3_bucket_url,
                       _policy: s3_policy(path: options[:uploaded_files_path]),
                       _signature: s3_signature(path: options[:uploaded_files_path]) }.to_query
 
     content_tag :iframe, '',
-                src: "http://#{S3_CONFIG['bucket_name']}.s3.amazonaws.com/#{options[:uploader_path]}?#{upload_params}",
+                src: "http://#{ENV['S3_UPLOADER_BUCKET']}.s3.amazonaws.com/#{options[:uploader_path]}?#{upload_params}",
                 frameborder: 0,
                 height: options[:iframe_height] || 60,
                 width: options[:iframe_width] || 500,
@@ -23,7 +23,7 @@ module UploadsHelper
 
 
   def s3_bucket_url
-    "http://#{S3_CONFIG['bucket_name']}.s3.amazonaws.com/"
+    "http://#{ENV['S3_UPLOADER_BUCKET']}.s3.amazonaws.com/"
   end
 
 
@@ -41,7 +41,7 @@ module UploadsHelper
     Base64.encode64(
       "{'expiration': '#{10.hours.from_now.utc.strftime('%Y-%m-%dT%H:%M:%S.000Z')}',
         'conditions': [
-          {'bucket': '#{S3_CONFIG['bucket_name']}'},
+          {'bucket': '#{ENV['S3_UPLOADER_BUCKET']}'},
           ['starts-with', '$key', ''],
           {'acl': '#{options[:acl]}'},
           {'success_action_status': '201'},
@@ -56,7 +56,7 @@ module UploadsHelper
     Base64.encode64(
       OpenSSL::HMAC.digest(
       OpenSSL::Digest::Digest.new('sha1'),
-      S3_CONFIG['secret_access_key'], s3_policy(options))).gsub("\n","")
+      ENV['S3_UPLOADER_SECRET_ACCESS_KEY'], s3_policy(options))).gsub("\n","")
   end
 
 
