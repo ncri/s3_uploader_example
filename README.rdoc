@@ -5,6 +5,7 @@ Based on the great jQuery File Upload plugin: http://blueimp.github.com/jQuery-F
 Features:
 
 * No flash :)
+* Uploads straight to S3 without hitting the server first
 * File Progress Indicator (Chrome, Firefox, Safari)
 * Multiple file selection, parallel upload (Chrome, Firefox, Safari)
 * Drag'n'Drop (Firefox 4+, Safari 5+ - buggy on windows, Google Chrome)
