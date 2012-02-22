@@ -13,7 +13,7 @@ Features:
 Tested with Chrome, Firefox, Safari, Opera and IE 7
 
 Get's around S3's lacking cross domain access header support by storing the upload form on s3, embedded in an iframe.
-Upload Progress is displayed on the host server by utilizing postMessage browser communication.
+Upload progress is displayed on the host server by utilizing postMessage browser communication.
 
 == Getting Started
 
