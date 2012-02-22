@@ -1,5 +1,5 @@
 %h1 jQuery S3 File Uploader Demo
-#uploader
+#uploader{ 'data-s3-bucket' => ENV['S3_UPLOADER_BUCKET'] }
   = s3_uploader create_resource_url: uploads_url
 
   #uploading_files
