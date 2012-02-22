@@ -53,10 +53,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="uplader.rake" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="uplader.rake" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/tasks/uplader.rake">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="59" selection-start="844" selection-end="873" vertical-scroll-proportion="1.041588">
+            <state line="29" column="59" selection-start="844" selection-end="873" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.rdoc" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.rdoc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="78" selection-start="636" selection-end="636" vertical-scroll-proportion="0.7364341">
               <folding />
             </state>
           </provider>
@@ -109,15 +118,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="uploads.js.coffee.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/uploads.js.coffee.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="8" selection-start="573" selection-end="573" vertical-scroll-proportion="-1.5384616">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -131,7 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/models/upload.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20120216184202_create_uploads.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/uploads.css.scss" />
@@ -147,6 +146,7 @@
         <option value="$PROJECT_DIR$/config/amazon_s3.yml" />
         <option value="$PROJECT_DIR$/lib/tasks/uplader.rake" />
         <option value="$PROJECT_DIR$/app/helpers/uploads_helper.rb" />
+        <option value="$PROJECT_DIR$/README.rdoc" />
       </list>
     </option>
   </component>
@@ -925,7 +925,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/tasks/uplader.rake">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="59" selection-start="844" selection-end="873" vertical-scroll-proportion="1.041588">
+        <state line="29" column="59" selection-start="844" selection-end="873" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.rdoc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="78" selection-start="636" selection-end="636" vertical-scroll-proportion="0.7364341">
           <folding />
         </state>
       </provider>
