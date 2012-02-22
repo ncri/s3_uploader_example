@@ -35,7 +35,7 @@ module UploadsHelper
   def s3_policy options = {}
     options[:content_type] ||= ''
     options[:acl] ||= 'public-read'
-    options[:max_file_size] ||= 20.megabyte
+    options[:max_file_size] ||= 5.megabyte
     options[:path] ||= ''
 
     Base64.encode64(
