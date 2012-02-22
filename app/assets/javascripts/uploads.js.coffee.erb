@@ -1,6 +1,6 @@
 jQuery ->
 
-  uploaderHost = 'http://do2-media.s3.amazonaws.com'
+  uploaderHost = "http://<%= ENV['S3_UPLOADER_BUCKET'] %>.s3.amazonaws.com"
 
   xhrUploadProgressSupported = () ->
     xhr = new XMLHttpRequest()

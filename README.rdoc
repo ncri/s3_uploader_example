@@ -25,5 +25,8 @@ Upload progress is displayed on the host server by utilizing postMessage browser
     ENV['S3_UPLOADER_ACCESS_KEY']
     ENV['S3_UPLOADER_SECRET_ACCESS_KEY']
 
-3. Deploy uploader javascript and form to s3
+3. Set your server host in app/assets/javascripts/s3_uploader/s3_uploader.js:
+    var host = 'http://yourdomain.com';
+
+4. Deploy uploader javascript and form to s3
     bundle exec rake uploader:deploy
