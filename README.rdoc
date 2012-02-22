@@ -16,9 +16,9 @@ Tested with Chrome, Firefox, Safari, Opera and IE 7
     bundle install
 
 2. Make sure the following environment variables are set:
- * S3_UPLOADER_BUCKET
- * S3_UPLOADER_ACCESS_KEY
- * S3_UPLOADER_SECRET_ACCESS_KEY
+* S3_UPLOADER_BUCKET
+* S3_UPLOADER_ACCESS_KEY
+* S3_UPLOADER_SECRET_ACCESS_KEY
 
 3. Deploy uploader javascript and form to s3
     bundle exec rake uploader:deploy
