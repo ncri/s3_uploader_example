@@ -2,20 +2,20 @@
 
 Features:
 
-* No flash
+* No flash :)
 * File Progress Indicator (Chrome, Firefox, Safari)
 * Multiple file selection, parallel upload (Chrome, Firefox, Safari)
 * Drag'n'Drop (Firefox 4+, Safari 5+ [buggy on windows], Google Chrome)
 * Internet Explorer and Opera fall back to iframe transport single file uploads
 
-Tested with
-
-* Chrome, Firefox, Safari, Opera and IE 7
+Tested with Chrome, Firefox, Safari, Opera and IE 7
 
 == Getting Started
 
-1. bundle install
+1. Install gems
+    bundle install
 
 2. Make sure the following environment variables are set: S3_UPLOADER_BUCKET, S3_UPLOADER_ACCESS_KEY, S3_UPLOADER_SECRET_ACCESS_KEY
 
-3. Deploy uploader javascript and form to s3: bundle exec rake uploader:deploy
+3. Deploy uploader javascript and form to s3
+    bundle exec rake uploader:deploy
