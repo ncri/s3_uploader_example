@@ -41,7 +41,8 @@ After a file is uploaded a post ajax request is made to create a resource for th
 
 == Notes
 
-The uploader location on s3 is currently hardcoded to http://#{ENV['S3_UPLOADER_BUCKET']}.s3.amazonaws.com/uploader.
-The path for the uploaded files defaults to "#{controller_name}/:uuid" and can be changed in the s3_uploader
+* The uploader location on s3 is currently hardcoded to http://#{ENV['S3_UPLOADER_BUCKET']}.s3.amazonaws.com/uploader.
+
+* The path for the uploaded files defaults to "#{controller_name}/:uuid" and can be changed in the s3_uploader
 helper options via the :uploaded_files_path parameter. Currently the path must have the :uuid placeholder in it.
 It is replaced with a random string for each uploaded file.
