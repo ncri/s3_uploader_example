@@ -35,3 +35,5 @@ After a file is uploaded a post ajax request is made to create a resource for th
 
 5. Deploy uploader javascript and form to s3
     bundle exec rake uploader:deploy
+
+6. Run or deploy the app :)
