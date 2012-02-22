@@ -46,3 +46,6 @@ After a file is uploaded a post ajax request is made to create a resource for th
 * The path for the uploaded files defaults to "#{controller_name}/:uuid" and can be changed in the s3_uploader
   helper options via the :uploaded_files_path parameter. Currently the path must have the :uuid placeholder in it.
   It is replaced with a random string for each uploaded file, to obfuscate the file locations and to prevent overwriting existing files.
+
+* There is no progress bar in Safari yet, as I'm using the progress tag which is not supported by Safari.
+  Feel free to add a fallback bar and send me a pull request. ;-)
