@@ -1,6 +1,6 @@
 jQuery(function() {
 
-  var host = 'http://html5-s3-uploader.herokuapp.com';
+  var host = 'http://localhost:3000';
 
   var params = decodeURIComponent(location.href).split('?')[1].split('&');
   var s3BucketUrl;
