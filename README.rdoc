@@ -1,4 +1,6 @@
-== S3 Uploader Example Rails App
+== S3 Uploader Rails Example
+
+Based on the great jQuery File Upload plugin: http://blueimp.github.com/jQuery-File-Upload/
 
 Features:
 
