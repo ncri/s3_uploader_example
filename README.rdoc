@@ -11,7 +11,7 @@ Features:
 * Drag'n'Drop (Chrome, Firefox 4+, Safari 5+ - buggy on windows)
 * Internet Explorer and Opera fall back to iframe transport single file uploads
 
-Tested with Chrome, Firefox, Safari, Opera and IE 7
+Tested with Chrome, Firefox, Safari, Opera and IE 8
 
 Gets around S3's lacking cross domain access header support by storing the upload form on s3, embedded in an iframe.
 Upload progress is displayed on the host server by utilizing postMessage browser communication.
