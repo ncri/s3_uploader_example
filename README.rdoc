@@ -15,18 +15,23 @@ Tested with Chrome, Firefox, Safari, Opera and IE 7
 Get's around S3's lacking cross domain access header support by storing the upload form on s3, embedded in an iframe.
 Upload progress is displayed on the host server by utilizing postMessage browser communication.
 
+After a file is uploaded a post ajax request is made to create a resource for the uploaded file in the db.
+
 == Getting Started
 
 1. Install gems
     bundle install
 
-2. Make sure the following environment variables are set:
+2. Migrate database
+    bundle exec rake db:migrate
+
+3. Make sure the following environment variables are set:
     ENV['S3_UPLOADER_BUCKET']
     ENV['S3_UPLOADER_ACCESS_KEY']
     ENV['S3_UPLOADER_SECRET_ACCESS_KEY']
 
-3. Set your server host in app/assets/javascripts/s3_uploader/s3_uploader.js:
+4. Set your server host in app/assets/javascripts/s3_uploader/s3_uploader.js:
     var host = 'http://yourdomain.com';
 
-4. Deploy uploader javascript and form to s3
+5. Deploy uploader javascript and form to s3
     bundle exec rake uploader:deploy
