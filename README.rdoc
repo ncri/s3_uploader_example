@@ -39,6 +39,18 @@ After a file is uploaded a post ajax request is made to create a resource for th
 
 6. Run or deploy the app :)
 
+==What this gem is doing
+
+* The app adds the params to the form that S3 requires to upload a file. Specifically, the policy, the bucket, the signature, & the access key.
+
+* The trickiest of these to generate it the signature and S3 requires files have a signature. The signature is an Base64 encoded hash of the S3 policy using your S3 secret access key. 
+
+* The gem generates this signature in the s3_signature method in the UploadsHelper class. 
+
+* The uploads helper class also has methods to generate the iframe with the necessary params.
+
+
+
 == Notes
 
 * The uploader location on s3 is currently hardcoded to /uploader.
