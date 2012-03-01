@@ -35,7 +35,7 @@ jQuery(function() {
   }
 
   $(window).on("message", function (e) {
-    event.preventDefault();
+    e.preventDefault();
     if (e.originalEvent.origin !== host)
       return;
     var data = JSON.parse(e.originalEvent.data)
