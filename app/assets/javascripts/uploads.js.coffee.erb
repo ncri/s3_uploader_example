@@ -12,9 +12,9 @@ jQuery ->
 
 
   $('#uploading_files').on 'click', '.uploading_file .remove_link', (e) ->
-    uuid = $(this).parent().attr('id')
+    uuid = $(this).parent().data('uuid')
     $(this).parent().remove()
-    $('#uploader iframe')[0].contentWindow.postMessage({ eventType: 'abort upload', uuid: uuid }, uploaderHost);
+    $('#uploader iframe')[0].contentWindow.postMessage(JSON.stringify({ eventType: 'abort upload', uuid: uuid }), uploaderHost);
 
 
   $(window).on "message", (event) ->
