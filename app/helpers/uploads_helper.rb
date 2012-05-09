@@ -14,7 +14,7 @@ module UploadsHelper
                       _signature: s3_signature(path: options[:uploaded_files_path]) }.to_query
 
     content_tag :iframe, '',
-                src: "http://#{ENV['S3_UPLOADER_BUCKET']}.s3.amazonaws.com/#{options[:uploader_path]}?#{upload_params}",
+                src: "https://s3.amazonaws.com/#{ENV['S3_UPLOADER_BUCKET']}/#{options[:uploader_path]}?#{upload_params}",
                 frameborder: 0,
                 height: options[:iframe_height] || 60,
                 width: options[:iframe_width] || 500,
@@ -23,7 +23,7 @@ module UploadsHelper
 
 
   def s3_bucket_url
-    "http://#{ENV['S3_UPLOADER_BUCKET']}.s3.amazonaws.com/"
+    "https://s3.amazonaws.com/#{ENV['S3_UPLOADER_BUCKET']}/"
   end
 
 
