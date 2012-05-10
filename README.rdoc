@@ -53,6 +53,7 @@ After a file is uploaded a post ajax request is made to create a resource for th
 
 * For some reason in Chrome only the last upload of multiple parallel uploads can be cancelled. Other uploads can be removed from the progress
   list, but their upload still continues. Firefox doesn't show this odd behaviour. All uploads can be canceled there as expected.
+  I filed a bug here: http://code.google.com/p/chromium/issues/detail?can=2&start=0&num=100&q=&colspec=ID%20Pri%20Mstone%20ReleaseBlock%20Area%20Feature%20Status%20Owner%20Summary&groupby=&sort=&id=114879
 
 * S3 is very particular about what params have to accompany a file upload. Specifically, the policy, the bucket, the signature, & the access key.
 
