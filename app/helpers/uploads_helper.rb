@@ -14,7 +14,7 @@ module UploadsHelper
                       _signature: s3_signature(path: options[:uploaded_files_path]) }.to_query
 
     content_tag :iframe, '',
-                src: "http://s3.amazonaws.com/#{ENV['S3_UPLOADER_BUCKET']}/#{options[:uploader_path]}?#{upload_params}",
+                src: "https://s3.amazonaws.com/#{ENV['S3_UPLOADER_BUCKET']}/#{options[:uploader_path]}?#{upload_params}",
                 frameborder: 0,
                 height: options[:iframe_height] || 60,
                 width: options[:iframe_width] || 500,
@@ -23,7 +23,7 @@ module UploadsHelper
 
 
   def s3_bucket_url
-    "http://s3.amazonaws.com/#{ENV['S3_UPLOADER_BUCKET']}/"
+    "https://s3.amazonaws.com/#{ENV['S3_UPLOADER_BUCKET']}/"
   end
 
 
@@ -35,7 +35,7 @@ module UploadsHelper
   def s3_policy options = {}
     options[:content_type] ||= ''
     options[:acl] ||= 'public-read'
-    options[:max_file_size] ||= 5.megabyte
+    options[:max_file_size] ||= 500.megabyte
     options[:path] ||= ''
 
     Base64.encode64(

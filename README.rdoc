@@ -51,6 +51,9 @@ After a file is uploaded a post ajax request is made to create a resource for th
 * There is no progress bar in Safari yet, as I'm using the progress tag which is not supported by Safari.
   Feel free to add a fallback bar and send me a pull request. ;-)
 
+* For some reason in Chrome only the last upload of multiple parallel uploads can be cancelled. Other uploads can be removed from the progress
+  list, but their upload still continues. Firefox doesn't show this odd behaviour. All uploads can be canceled there as expected.
+
 * S3 is very particular about what params have to accompany a file upload. Specifically, the policy, the bucket, the signature, & the access key.
 
 * The signature is the trickiest to generate. The signature is a Base64 encoded hash of the S3 policy using your S3 secret access key.
