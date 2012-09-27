@@ -1,5 +1,7 @@
 == S3 Uploader Rails Example
 
+<b>Check http://railscasts.com/episodes/383-uploading-to-amazon-s3 for an easier solution using Amazon's new feature CORS.</b>
+
 Based on the great jQuery File Upload plugin: http://blueimp.github.com/jQuery-File-Upload/
 
 Features:
