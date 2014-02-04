@@ -6,7 +6,7 @@ class UploadsController < ApplicationController
 
   def create
     @upload = Upload.new(params[:upload] || params.delete_if{ |p| !Upload.attribute_names.include?(p) })
-    render nothing: true if @upload.save
+    @upload.save ? render(json: @upload.id) : render(nothing: true)
   end
 
 end

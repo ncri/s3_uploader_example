@@ -60,3 +60,27 @@ progress{
   color: red;
   text-decoration: none;
 }
+
+#uploader { 
+  .wrapper {
+    position: relative;
+    display: inline-block;
+    &:hover {
+      .delete {
+        display: block;
+      }
+    }
+    .thumb { 
+      height: 100px;
+      margin-right: 5px;
+    }
+    .delete { 
+      display:none;
+      position: absolute;
+      top: 2px;
+      right: 7px;
+      background: white;
+      cursor: pointer;
+    }
+  }
+}

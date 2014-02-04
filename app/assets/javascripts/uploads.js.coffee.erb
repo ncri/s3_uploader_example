@@ -37,7 +37,20 @@ jQuery ->
 
         $.ajax $('#uploader iframe').data('create-resource-url'),
           type: 'POST',
-          data: data
+          data: data,
+          dataType: 'text',
+          success: (upload_id) ->
+            wrapper = $('<div class="wrapper"></div>')
+            img = $('<img class="thumb">')
+            remove_btn = $("<img src='<%= asset_path('delete.png') %>' class='delete' />")
+            remove_btn.click () ->
+              $(this).parent().fadeOut(() -> $(this).remove())
+            img_id = $('<input type="hidden" name="uploads[]" />')
+            img.attr('src', "#{uploaderHost}/#{data.s3_key}/#{data.file_name}")
+            img.attr('data-img-id', upload_id)
+            img_id.val(upload_id)
+            wrapper.append(img).append(img_id).append(remove_btn)
+            $('#uploader').append(wrapper)
 
 
       when 'add upload'
